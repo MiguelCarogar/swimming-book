@@ -65,6 +65,19 @@ export default {
       error: null
     };
   },
+  created() {
+    firebase.auth().onAuthStateChanged(userAuth => {
+      if (userAuth) {
+        firebase
+          .auth()
+          .currentUser.getIdTokenResult()
+          .then(tokenResult => {
+            console.log(tokenResult.claims);
+          });
+      }
+    });
+  },
+
   methods: {
     submit() {
       firebase
