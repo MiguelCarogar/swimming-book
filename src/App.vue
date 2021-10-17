@@ -1,12 +1,19 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link>
-    </div>
-    <router-view/>
+  <div>
+    <navbar></navbar>
+    <main class="py-4">
+      <router-view></router-view>
+    </main>
   </div>
 </template>
-
+<script>
+import navbar from "./components/Navbar";
+export default {
+  components: {
+    navbar
+  }
+};
+</script>
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
