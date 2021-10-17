@@ -12,21 +12,33 @@ const routes: RouteConfig[] = [
     path: '/',
     name: 'Home',
     component: Home,
+    meta: {
+      guest: true
+    }
   },
   {
     path: '/login',
     name: 'login',
-    component: Login
+    component: Login,
+    meta: {
+      guest: true
+    }
   },
   {
     path: '/register',
     name: 'Register',
-    component: Register
+    component: Register,
+    meta: {
+      guest: true
+    }
   },
   {
     path: '/dashboard',
     name: 'Dashboard',
-    component: Dashboard
+    component: Dashboard,
+    meta: {
+      auth: true
+    }
   },
 ];
 
